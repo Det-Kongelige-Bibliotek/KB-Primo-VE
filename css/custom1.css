@@ -10615,6 +10615,32 @@ prm-personal-info md-card md-card-content button.md-button, #personal_settings-f
   -webkit-appearance: textfield;
 }
 
+#getit_link1_0 .section-body > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#getit_link1_0 .section-body div prm-opac{
+    order: -9 !important;
+}
+
+
+#getit_link1_0 .section-body div prm-alma-other-members{
+    order: -8 !important;
+}
+
+
+#getit_link1_0 .section-body div alma-htgi-svc{
+    order: -7 !important;
+}
+
+prm-alma-other-members .medium-uppercase-bold{
+    font-size: 16px;
+}
+
+prm-alma-other-members button.section-title{
+    background-color: white;
+}
 /*!*Styles for primo-explore-help-menu: MW 20190409 *!*/
 
 #search-help-menu-content h2 {font-weight: 500;}
