@@ -6,9 +6,12 @@ class PrmServiceButtonAfterController {
     $postLink() {
         let _this = this;
         this.intervalId = this.$interval(function(){
+            _this.hidePickupInstitution(_this);
+
             let AlmaRequestOther = angular.element(document.querySelector("span[translate='AlmaRequestOther']"));
             if(AlmaRequestOther.length){
                 _this.$interval.cancel(_this.intervalId);
+                _this.intervalId = undefined;
                 AlmaRequestOther = AlmaRequestOther.parent().parent();
                 if(AlmaRequestOther[0].textContent === angular.element(_this.$element.parent())[0].textContent){
                     let container = AlmaRequestOther.parent();
@@ -22,7 +25,6 @@ class PrmServiceButtonAfterController {
                     for (let i = 0; i < requestButtons.length; i++) {
                         requestButtons[i].addEventListener("click", function(){
                             if(document.getElementsByClassName("orderAtTheBottom") && document.getElementsByClassName("orderAtTheBottom").length){
-                                console.log('hej');
                                 AlmaRequestOther.css('display', 'none');
                             }
 
@@ -42,6 +44,27 @@ class PrmServiceButtonAfterController {
             }
         }, 500, 5);
     };
+
+    hidePickupInstitution (_this){
+        let parentElement = _this.$element.parent()[0];
+        let container = angular.element(parentElement)[0].children[0];
+        if (angular.element(container).hasClass("button-as-link")){
+            container.addEventListener("click", function(){
+                _this.intervalId2 = _this.$interval(function(){
+                    let formFields = angular.element(document.querySelectorAll("prm-form-field"));
+                    if(formFields.length){
+                        _this.$interval.cancel(_this.intervalId2);
+                        _this.intervalId2 = undefined;
+                        if (angular.element(formFields[1].querySelectorAll("md-select[name='pickupInstitution']"))){
+                            let pickupInstitution = formFields[1];
+                            angular.element(pickupInstitution).css('display', 'none');
+                        }
+                    }
+                }, 500, 3);
+
+            });
+        }
+    }
 }
 
 PrmServiceButtonAfterController.$inject = ['$element', '$interval'];
