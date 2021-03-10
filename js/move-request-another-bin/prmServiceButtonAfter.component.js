@@ -7,7 +7,7 @@ class PrmServiceButtonAfterController {
         let _this = this;
         this.intervalId = this.$interval(function(){
             _this.hidePickupInstitution(_this);
-
+            // console.log('hej');
             let AlmaRequestOther = angular.element(document.querySelector("span[translate='AlmaRequestOther']"));
             if(AlmaRequestOther.length){
                 _this.$interval.cancel(_this.intervalId);
@@ -53,12 +53,13 @@ class PrmServiceButtonAfterController {
                 _this.intervalId2 = _this.$interval(function(){
                     let formFields = angular.element(document.querySelectorAll("prm-form-field"));
                     if(formFields.length){
-                        _this.$interval.cancel(_this.intervalId2);
-                        _this.intervalId2 = undefined;
-                        if (angular.element(formFields[1].querySelectorAll("md-select[name='pickupInstitution']"))){
-                            let pickupInstitution = formFields[1];
-                            angular.element(pickupInstitution).css('display', 'none');
-                        }
+                        console.log(formFields);
+                            for (let i = 0; i < formFields.length; i++) {
+                                if (angular.element(formFields[i].querySelectorAll("md-select[name='pickupInstitution']")).length) {
+                                    let pickupInstitution = formFields[i];
+                                    angular.element(pickupInstitution).css('display', 'none');
+                                }
+                            }
                     }
                 }, 500, 3);
 
