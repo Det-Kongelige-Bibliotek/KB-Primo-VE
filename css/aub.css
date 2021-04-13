@@ -1,0 +1,9 @@
+/* AUB button covers the Primo button */
+#aub{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}

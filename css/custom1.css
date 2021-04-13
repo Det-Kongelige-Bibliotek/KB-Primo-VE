@@ -10585,6 +10585,15 @@ md-toast {
 }
 
 
+/* AUB button covers the Primo button */
+#aub{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
 button[aria-label="nui.aria.request.calcPlaceInQueue"]{
     background-color: #002E70;
     border: 1px solid #002E70;
