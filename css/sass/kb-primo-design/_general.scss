@@ -42,6 +42,24 @@ prm-explore-main .header {
   z-index: 15;
 }
 
-span.availability-status.not_restricted{
+#searchResultsContainer prm-search-result-availability-line span.fulltext[translate="delivery.code.fulltext"] {
   color: $links;
+}
+
+button span[class*="available"],
+button span.fulltext{
+  color: $secondary-color !important;
+}
+
+span[translate="fulldisplay.otherLocations.register"]{
+  background-color: #002E70;
+  border: 1px solid #002E70;
+  color: white;
+  font-family: "nowayregular", sans-serif;
+  height: 2.875rem;
+  font-size: .875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
+  border-radius: 5px;
 }

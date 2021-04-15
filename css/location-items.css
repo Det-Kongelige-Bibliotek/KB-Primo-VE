@@ -30,7 +30,9 @@ div[translate="almaRequest.pickupLocation"]{
     color : red!important;
 }
 /* Hiding 'Udlån til biblioteker' which is reserved for
-   Fjernlån department but shouldn't be used in Primo */
-md-optgroup[label="Udlån til biblioteker"]{
+   Fjernlån department but shouldn't be used in Primo
+   (Må ikke benyttes)*/
+md-optgroup[label="Udlån til biblioteker"],
+#prm_almaResourceSharing\.preferredLocalPickupLocation[value="23549366450005763"]{
     display: none;
 }
