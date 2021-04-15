@@ -34,7 +34,7 @@ import {PickUpNumbersService } from "./pickup-numbers/pickUpNumbers.service";
 import {PrmRequestsAfterConfig} from "./pickup-numbers/prmRequestsAfter.component";
 
 // Partner library
-import {PrmLocationHoldingsAfterConfig} from "./partner-library/prmLocationHoldingsAfter.component";
+import {PrmLocationHoldingsAfterConfig} from "./consent-form/prmLocationHoldingsAfter.component";
 
 angular.module('viewCustom', ['angularLoad', 'helpMenuTopbar'])
 
@@ -112,7 +112,7 @@ angular.module('viewCustom', ['angularLoad', 'helpMenuTopbar'])
     .component(PrmRequestsAfterConfig.name, PrmRequestsAfterConfig.config)
 
     // Partner library
-    .component(PrmLocationHoldingsAfterConfig.name, PrmLocationHoldingsAfterConfig.config);
+    .component(PrmLocationHoldingsAfterConfig.name, PrmLocationHoldingsAfterConfig.config)
 
 // Get more info at https://github.com/Det-Kongelige-Bibliotek/KB-Primo-VE-Announcement
 require('kb-primo-ve-announcement');

@@ -3,7 +3,7 @@ class PrmLocationHoldingsAfterController {
         this.$location = $location;
         this.$interval = $interval;
         this.$mdDialog = $mdDialog;
-        this.lang = '';
+        this.lang = 'da';
     }
 
     addScriptToButton(intervalId) {
@@ -19,7 +19,7 @@ class PrmLocationHoldingsAfterController {
                 let button = document.createElement("button");
                 button.id = "aub";
                 button.addEventListener("click", function(event){
-                    _this.openDialog(event);
+                    _this.showDialog(event);
                 });
                 btn[0].disabled = true;
                 node[0].appendChild(button);
@@ -31,35 +31,23 @@ class PrmLocationHoldingsAfterController {
         }
     }
 
-    openDialog(event){
-        let texts = {
-            da:{
-                title:'Giver du os tilladelse til at sende dine oplysninger til vores partner',
-                ariaLabel:'Giver du os tilladelse til at sende dine oplysninger til vores partner',
-                confirm: 'Ja',
-                reject: 'Nej'
-            },
-            en:{
-                title:'Do you give us the permission to send your information to our partner?',
-                ariaLabel:'Do you give us the permission to send your information to our partner?',
-                confirm: 'Yes',
-                reject: 'No'
-            }
-        };
-        let dialog = this.$mdDialog.confirm()
-            .title(texts[this.lang].title)
-            // .textContent('')
-            .ariaLabel(texts[this.lang].ariaLabel)
-            .targetEvent(event)
-            .ok(texts[this.lang].confirm)
-            .cancel(texts[this.lang].reject);
-        this.$mdDialog.show(dialog).then(
+    showDialog(){
+        let confirm = this.$mdDialog.confirm({
+            templateUrl: 'custom/45KBDK_KGL-KGL/html/consent-form/consent-form.html',
+            parent: angular.element(document.body),
+            controllerAs: 'dialog',
+            clickOutsideToClose: true,
+            escapeToClose: true
+        });
+
+        this.$mdDialog.show(confirm).then(
             function () {
                 let btn = angular.element(document.querySelectorAll("prm-location-items button span[translate='fulldisplay.otherLocations.register']")).parent();
                 btn[0].disabled = false;
                 btn[0].click();
             },
-            function () {});
+            function () {
+            });
     }
 
     $postLink() {

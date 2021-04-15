@@ -1,0 +1,19 @@
+<md-dialog aria-label="{{'consentForm.ariaLabel'| translate}}">
+    <md-dialog-html>
+        <h3 translate="consentForm.title"></h3>
+        <p translate="consentForm.subTitle"></p>
+    </md-dialog-html>
+
+    <md-dialog-actions>
+        <md-button class="md-primary md-cancel-button md-button"
+                   type="button"
+                   ng-click = "dialog.abort()"
+                   translate="consentForm.no">
+        </md-button>
+        <md-button class="md-primary md-confirm-button md-button"
+                   type="button"
+                   ng-click = "dialog.hide()"
+                   translate="consentForm.yes">
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>
