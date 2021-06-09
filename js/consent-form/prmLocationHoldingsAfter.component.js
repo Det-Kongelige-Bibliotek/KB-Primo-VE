@@ -32,9 +32,10 @@ class PrmLocationHoldingsAfterController {
     }
 
     showDialog(){
-        // TODO: change the viewname to a variable
+        let vid = this.$location.search().vid.replace("%3A", "-").replace(":", "-");
+        console.log('vid:', vid);
         let confirm = this.$mdDialog.confirm({
-            templateUrl: 'custom/45KBDK_KGL-FNW/html/consent-form/consent-form.html',
+            templateUrl: `custom/${vid}/html/consent-form/consent-form.html`,
             parent: angular.element(document.body),
             controllerAs: 'dialog',
             clickOutsideToClose: true,
