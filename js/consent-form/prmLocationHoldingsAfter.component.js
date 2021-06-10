@@ -72,3 +72,6 @@ export let PrmLocationHoldingsAfterConfig = {
         controller: PrmLocationHoldingsAfterController
     }
 };
+
+// section-title md-button md-primoExplore-theme md-ink-ripple layout-fill
+// section-title md-button md-primoExplore-theme md-ink-ripple layout-fill collapsed

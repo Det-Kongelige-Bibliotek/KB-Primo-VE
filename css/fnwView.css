@@ -24,3 +24,13 @@ prm-alma-other-members .medium-uppercase-bold{
 prm-alma-other-members button.section-title{
     background-color: white;
 }
+
+#getit_link1_0 .section-body .layout-fill{
+    min-height: 50%;
+    height: 50%;
+}
+
+#getit_link1_0 .section-body .layout-fill.collapsed{
+    min-height: 100%;
+    height: 100%;
+}
