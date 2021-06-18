@@ -26,8 +26,8 @@ prm-alma-other-members button.section-title{
 }
 
 #getit_link1_0 .section-body .layout-fill{
-    min-height: 50%;
-    height: 50%;
+    min-height: 36px;
+    height: auto;
 }
 
 #getit_link1_0 .section-body .layout-fill.collapsed{
